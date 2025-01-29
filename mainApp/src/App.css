@@ -174,3 +174,33 @@ body{
   width: 90%;
   padding: 10px;
 }
+#selMonth{
+  width: 100px;
+}
+@media (max-width: 768px) {
+  .container{
+    flex-direction: column;
+  }
+  .add-container{
+    width: 100%;
+  }
+  .chart-container{
+    width: 100%;
+  }
+  .filter-category{
+    width: 50px;
+  }
+  .add-btn{
+    margin: 0px 5px;
+    font-size: 15px;
+    background-color: rgb(52, 52, 52);
+    padding: 1px 5px;
+  }
+  .btnspan{
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .addform{
+    width: 90%;
+  }
+}
