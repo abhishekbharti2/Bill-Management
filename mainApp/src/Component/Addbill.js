@@ -7,15 +7,17 @@ export default function Bills() {
   const [filt, setFil] = useState(bills);
   const [ttotal, setTotal] = useState(0);
   
- useEffect(()=>{
-  setFil(bills)
-  if(month!=='All'){
-    const f = bills.filter((item) => item.date.slice(0, 7).includes(month))
-    setFil(f)
-  }
-  setTotal(filt.reduce((total, bill) => total + parseInt(bill.amount), 0))
- })
+  useEffect(() => {
+    setFil(bills);
+    let filteredBills = bills;
+    if (month !== 'All') {
+      filteredBills = bills.filter((item) => item.date.slice(0, 7).includes(month));
+    }
+    setFil(filteredBills);
+    setTotal(filteredBills.reduce((total, bill) => total + parseInt(bill.amount), 0));
+  }, [bills, month]);
   
+
   return (
     <div className="add-container">
       <h3 style={{textAlign:'center'}}>{month} Months Spends</h3>
