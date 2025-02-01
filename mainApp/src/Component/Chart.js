@@ -71,8 +71,7 @@ export default function Bills() {
     <div className="chart-container">
       <div className="title">
         <strong>
-          Monthly Billing 
-          <input id='selMonth' onChange={(r) => filterMonth(r.target.value)} type="month" />
+          Monthly Billing <input id='selMonth' onChange={(r) => filterMonth(r.target.value)} type="month" />
         </strong>
         <span>
           <select
@@ -87,7 +86,10 @@ export default function Bills() {
               </option>
             ))}
           </select>
-          <i onClick={() => setEdit(true)} className="add-btn">
+          <i onClick={() => {
+            setEdit(true)
+            setEditBill(false)
+          }} className="add-btn">
             +
           </i>
         </span>
